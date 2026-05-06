@@ -24,7 +24,7 @@
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "baseHref": "/ltd-portfolio-ng/",
-            "outputPath": "dist/ltd-portfolio-ng/browser",
+            "outputPath": "dist/ltd-portfolio-ng/",
             "assets": [
               {
                 "glob": "**/*",
