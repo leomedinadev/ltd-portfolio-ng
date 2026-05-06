@@ -1,18 +1,18 @@
 {
-  "name": "ltd-porfolio-ng",
-  "version": "0.0.1",
-  "base": "/porfolio/",
+  "name": "ltd-portfolio-ng",
+  "version": "1.0.0",
+  "base": "/portfolio/",
   "scripts": {
     "ng": "ng",
     "version": "echo $npm_package_version",
     "name": "echo $npm_package_name",
     "start": "ng serve --port 4300",
     "build": "ng build",
-    "build:pro": "ng build --configuration=production --base-href /ltd-porfolio-ng/",
+    "build:pro": "ng build --configuration=production --base-href /ltd-portfolio-ng/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "publish": "npm run build:pro && cd dist && npm publish",
-    "publish:docker": "npm run build:docker && docker push $npm_package_publishConfig_dockerRegistry/ec.com.ltd.porfolio/ltd-porfolio-ng:$npm_package_version",
+    "publish:docker": "npm run build:docker && docker push $npm_package_publishConfig_dockerRegistry/ec.com.ltd.portfolio/ltd-portfolio-ng:$npm_package_version",
     "analyze": "ng build --stats-json && webpack-bundle-analyzer ./dist/stats.json"
   },
   "publishConfig": {
