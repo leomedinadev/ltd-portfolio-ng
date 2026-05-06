@@ -1,10 +1,16 @@
 import {Component, inject, OnInit} from '@angular/core';
 import {ThemeEnum} from '../../commons/enum-types/theme-enum';
 import {ThemeService} from '../../core/theme-service';
+import {SunIconComponent} from '../icons/sun-icon.component';
+import {MoonIconComponent} from '../icons/moon-icon.component';
+import {SystemIconComponent} from '../icons/system-icon.component';
 
 @Component({
   selector: 'app-navbar',
   imports: [
+    SunIconComponent,
+    MoonIconComponent,
+    SystemIconComponent
   ],
   templateUrl: './navbar.html',
   styleUrl: './navbar.scss',
