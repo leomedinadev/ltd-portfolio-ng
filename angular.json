@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "ltd-porfolio-ng": {
+    "ltd-portfolio-ng": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,8 +23,8 @@
             "browser": "src/main.ts",
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "baseHref": "/ltd-porfolio-ng/",
-            "outputPath": "dist/ltd-porfolio-ng/",
+            "baseHref": "/ltd-portfolio-ng/",
+            "outputPath": "dist/ltd-portfolio-ng/browser",
             "assets": [
               {
                 "glob": "**/*",
@@ -76,10 +76,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "ltd-porfolio-ng:build:production"
+              "buildTarget": "ltd-portfolio-ng:build:production"
             },
             "development": {
-              "buildTarget": "ltd-porfolio-ng:build:development"
+              "buildTarget": "ltd-portfolio-ng:build:development"
             }
           },
           "defaultConfiguration": "development"
