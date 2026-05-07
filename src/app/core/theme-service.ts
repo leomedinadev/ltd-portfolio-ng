@@ -10,12 +10,11 @@ export class ThemeService {
   $isDarkMode = signal(false);
 
   constructor() {
-    // this.$isDarkMode.set(localStorage.getItem('theme') === ThemeEnum.dark);
-    // this.applyTheme(this.$isDarkMode() ? ThemeEnum.dark : ThemeEnum.light);
-    this.applyTheme(ThemeEnum.dark);
+    const saved = localStorage.getItem(this.storageThemeKey) as ThemeEnum | null;
+    const theme = saved ?? this.getBrowserTheme();
+    this.$theme.set(theme);
+    this.applyTheme(theme);
   }
-
-
 
   toggleTheme(theme: ThemeEnum) {
     this.$theme.set(theme);
@@ -23,13 +22,13 @@ export class ThemeService {
     this.applyTheme(theme);
   }
 
-  private applyTheme(theme: ThemeEnum) {
-    document.documentElement.setAttribute('data-theme', theme);
-    if (theme === ThemeEnum.dark) {
-      document.documentElement.classList.add('dark');
-    } else {
-      document.documentElement.classList.remove('dark');
-    }
+  getBrowserTheme(): ThemeEnum {
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? ThemeEnum.dark : ThemeEnum.light;
+  }
 
+  private applyTheme(theme: ThemeEnum) {
+    const effectiveTheme = theme === ThemeEnum.system ? this.getBrowserTheme() : theme;
+    document.documentElement.setAttribute('data-theme', effectiveTheme);
+    document.documentElement.classList.toggle('dark', effectiveTheme === ThemeEnum.dark);
   }
 }
