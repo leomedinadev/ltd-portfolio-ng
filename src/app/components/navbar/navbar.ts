@@ -26,27 +26,7 @@ export class Navbar implements OnInit {
     this.initTheme();
   }
   initTheme() {
-    // const theme = this.getThemePreference();
-    const theme = ThemeEnum.dark;
-    this.themeService.toggleTheme(theme);
-    this.updateIcon(theme);
-  }
-  getThemePreference() {
-    const theme = localStorage.getItem('theme');
-    if (theme == null) {
-      return this.getBrowserTheme();
-    }
-    if (theme === ThemeEnum.light) {
-      return ThemeEnum.light;
-    } else if (theme === ThemeEnum.dark) {
-      return ThemeEnum.dark;
-    } else {
-      return this.getBrowserTheme();
-    }
-  }
-
-  private getBrowserTheme() {
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? ThemeEnum.dark : ThemeEnum.light;
+    this.updateIcon(this.themeService.$theme());
   }
 
   onClickToggleItem(theme: ThemeEnum) {
