@@ -15,7 +15,7 @@ import {Title} from '@angular/platform-browser';
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly $title = signal('Portafolio Leo Tech Dev');
+  protected readonly $title = signal('Portafolio Leo Dev');
   titleService = inject(Title);
 
   constructor() {
