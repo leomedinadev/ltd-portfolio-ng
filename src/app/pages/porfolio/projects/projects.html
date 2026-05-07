@@ -1,4 +1,4 @@
-<section id="projects" data-section="projects" class="section py-16 scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl">
+<section id="projects" data-section="projects" class="section py-16 scroll-m-20 w-full mx-auto container px-4 sm:px-6 lg:max-w-4xl md:max-w-2xl">
   <div class="flex items-center justify-between mb-6">
     <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
       <code-icon [className]="'size-8'" />
@@ -22,7 +22,7 @@
       </div>
     </div>
   } @else {
-    <div class="projects-container grid-view grid grid-cols-3 gap-8">
+    <div class="projects-container grid-view grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       @for(project of projectList; track project.title) {
         <ng-container [ngTemplateOutlet]="tmpProject" [ngTemplateOutletContext]="{ project: project }"></ng-container>
       }

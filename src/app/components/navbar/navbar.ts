@@ -20,6 +20,7 @@ export class Navbar implements OnInit {
   themeEnum = ThemeEnum;
   themesMenu: HTMLElement | null = null;
   themeService = inject(ThemeService);
+  isMenuOpen = false;
 
   ngOnInit(): void {
     this.themesMenu = document.getElementById('themes-menu');
@@ -27,6 +28,12 @@ export class Navbar implements OnInit {
   }
   initTheme() {
     this.updateIcon(this.themeService.$theme());
+  }
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+  closeMenu() {
+    this.isMenuOpen = false;
   }
 
   onClickToggleItem(theme: ThemeEnum) {
