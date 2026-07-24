@@ -1,21 +1,17 @@
-import {Component, inject, signal} from '@angular/core';
-import {Navbar} from './components/navbar/navbar';
-import {Footer} from './components/footer/footer';
-import {Hero} from './pages/porfolio/hero/hero';
-import {Experience} from './pages/porfolio/experience/experience';
-import {Projects} from './pages/porfolio/projects/projects';
-import {Technologies} from './pages/porfolio/technologies/technologies';
-import {AboutMe} from './pages/porfolio/about-me/about-me';
-import {Title} from '@angular/platform-browser';
+import { Component, inject, signal } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
+import { Navbar } from './components/navbar/navbar';
+import { Footer } from './components/footer/footer';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
-  imports: [Navbar, Footer, Hero, Experience, Projects, Technologies, AboutMe],
+  imports: [RouterOutlet, Navbar, Footer],
   templateUrl: './app.html',
   styleUrl: './app.scss'
 })
 export class App {
-  protected readonly $title = signal('Portafolio Leo Dev');
+  protected readonly $title = signal('Leonardo Medina | Full Stack Developer');
   titleService = inject(Title);
 
   constructor() {

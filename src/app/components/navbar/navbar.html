@@ -2,11 +2,12 @@
 
   <!-- Desktop nav pill -->
   <nav id="header-nav" class="nav-shadow hidden md:flex px-3 text-sm font-medium rounded-full justify-center items-center">
-    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Home" href="#hero">Home</a>
-    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Experiencia" href="#experience">Experiencia</a>
-    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Proyectos" href="#projects">Proyectos</a>
-    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Sobre-mi" href="#about-me">Sobre mí</a>
-    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Tecnologías" href="#technologies">Tecnologías</a>
+    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Home" routerLink="/" fragment="hero">Home</a>
+    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Experiencia" routerLink="/" fragment="experience">Experiencia</a>
+    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Proyectos" routerLink="/" fragment="projects">Proyectos</a>
+    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Sobre-mi" routerLink="/" fragment="about-me">Sobre mí</a>
+    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Tecnologías" routerLink="/" fragment="technologies">Tecnologías</a>
+    <a class="relative block px-2 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400" aria-label="Blog" routerLink="/blog" routerLinkActive="text-yellow-500 dark:text-yellow-400">Blog</a>
     <div class="relative ml-1 mr-1">
       <button id="theme-toggle-btn" class="appearance-none border-none flex hover:scale-125 transition" (click)="onToggleTheme()"
               type="button" aria-expanded="false" aria-haspopup="true">
@@ -48,11 +49,12 @@
   @if (isMenuOpen) {
     <div class="absolute top-14 inset-x-4 md:hidden rounded-xl border border-gray-100 dark:border-gray-500/20 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg p-2 z-20">
       <nav class="flex flex-col text-sm font-medium">
-        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" href="#hero" (click)="closeMenu()">Home</a>
-        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" href="#experience" (click)="closeMenu()">Experiencia</a>
-        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" href="#projects" (click)="closeMenu()">Proyectos</a>
-        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" href="#about-me" (click)="closeMenu()">Sobre mí</a>
-        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" href="#technologies" (click)="closeMenu()">Tecnologías</a>
+        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" routerLink="/" fragment="hero" (click)="closeMenu()">Home</a>
+        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" routerLink="/" fragment="experience" (click)="closeMenu()">Experiencia</a>
+        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" routerLink="/" fragment="projects" (click)="closeMenu()">Proyectos</a>
+        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" routerLink="/" fragment="about-me" (click)="closeMenu()">Sobre mí</a>
+        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" routerLink="/" fragment="technologies" (click)="closeMenu()">Tecnologías</a>
+        <a class="px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition hover:text-yellow-500 dark:hover:text-yellow-400" routerLink="/blog" routerLinkActive="text-yellow-500 dark:text-yellow-400" (click)="closeMenu()">Blog</a>
         <hr class="my-1 border-gray-200 dark:border-gray-700">
         <div class="flex gap-1 px-2 py-1">
           <button class="flex-1 py-2 text-xs rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition" (click)="onClickToggleItem(themeEnum.light); closeMenu()">☀️ Light</button>

@@ -1,4 +1,5 @@
 import {Component, inject, OnInit} from '@angular/core';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 import {ThemeEnum} from '../../commons/enum-types/theme-enum';
 import {ThemeService} from '../../core/theme-service';
 import {SunIconComponent} from '../icons/sun-icon.component';
@@ -8,6 +9,8 @@ import {SystemIconComponent} from '../icons/system-icon.component';
 @Component({
   selector: 'app-navbar',
   imports: [
+    RouterLink,
+    RouterLinkActive,
     SunIconComponent,
     MoonIconComponent,
     SystemIconComponent
