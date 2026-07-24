@@ -1,0 +1,51 @@
+<section class="py-16 scroll-m-20 w-full mx-auto container px-4 sm:px-6 lg:max-w-4xl md:max-w-2xl">
+
+  <div class="mb-10">
+    <h1 class="text-3xl font-semibold text-black/80 dark:text-white">
+      Artículos
+    </h1>
+    <p class="mt-2 text-sm text-zinc-600 dark:text-zinc-400">
+      Aprendizajes, decisiones técnicas y lecciones del mundo real.
+    </p>
+  </div>
+
+  @if (articles.length === 0) {
+    <div class="flex flex-col items-center justify-center gap-4 py-24 text-center text-zinc-500 dark:text-zinc-400">
+      <p class="text-lg">Próximamente — estoy escribiendo los primeros artículos.</p>
+      <p class="text-sm">
+        Mientras tanto, sígueme en
+        <a [href]="devToUrl" target="_blank" rel="noopener noreferrer"
+           class="text-yellow-500 hover:underline font-medium">Github</a>
+      </p>
+    </div>
+  } @else {
+    <ul class="flex flex-col gap-4">
+      @for (article of articles; track article.slug) {
+        <li>
+          <a [routerLink]="['/blog', article.slug]"
+             class="group block rounded-xl border border-zinc-200 dark:border-zinc-700/50 bg-white/60 dark:bg-zinc-800/40 p-5 transition hover:border-yellow-400/60 dark:hover:border-yellow-400/40 hover:shadow-md">
+            <div class="flex items-center gap-2 mb-2">
+              <span class="text-xs font-mono px-2 py-0.5 rounded-full bg-yellow-100 dark:bg-yellow-500/10 text-yellow-700 dark:text-yellow-300 border border-yellow-200 dark:border-yellow-500/20">
+                {{ article.tag }}
+              </span>
+              <time class="text-xs text-zinc-400 dark:text-zinc-500">{{ article.date }}</time>
+            </div>
+            <h2 class="text-base font-semibold text-black/80 dark:text-white group-hover:text-yellow-500 dark:group-hover:text-yellow-400 transition line-clamp-2">
+              {{ article.title }}
+            </h2>
+            <p class="mt-1 text-sm text-zinc-600 dark:text-zinc-400 line-clamp-2">
+              {{ article.summary }}
+            </p>
+            <span class="mt-3 inline-flex items-center gap-1 text-xs text-yellow-500 dark:text-yellow-400 font-medium">
+              Leer artículo
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-3.5 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7"/>
+              </svg>
+            </span>
+          </a>
+        </li>
+      }
+    </ul>
+  }
+
+</section>

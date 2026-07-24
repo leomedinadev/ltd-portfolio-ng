@@ -1,0 +1,26 @@
+<section id="blog" data-section="blog" class="section py-16 scroll-m-20 w-full mx-auto container px-4 sm:px-6 lg:max-w-4xl md:max-w-2xl">
+  <h2 class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+    <article-icon [className]="'size-8'" />
+    Artículos
+  </h2>
+
+  @if (articles.length === 0) {
+    <div class="blog-empty">
+      <p>
+        Próximamente — sígueme en
+        <a [href]="devToUrl" target="_blank" rel="noopener noreferrer" class="devto-link">Github</a>
+        para estar al tanto.
+      </p>
+    </div>
+  } @else {
+    <div class="articles-grid">
+      @for (article of articles; track article.url) {
+        <a [href]="article.url" target="_blank" rel="noopener noreferrer" class="article-card">
+          <div class="article-tag">{{ article.tag }}</div>
+          <h3 class="article-title">{{ article.title }}</h3>
+          <time class="article-date">{{ article.date }}</time>
+        </a>
+      }
+    </div>
+  }
+</section>
