@@ -17,11 +17,15 @@ h1 {
   margin-bottom: 10px;
 }
 
-p {
+.projects-container-empty p {
   font-size: 1.2rem;
   opacity: 0.9;
   max-width: 500px;
   text-align: center;
+}
+
+.project-description {
+  opacity: 0.9;
 }
 
 /* Barra de progreso animada */

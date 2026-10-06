@@ -1,3 +1,5 @@
+import { Project } from '../models/project';
+
 export const Constants = {
   PROFILE_DEV: {
     NAME: 'Leonardo Medina',
@@ -7,7 +9,7 @@ export const Constants = {
     LINKS: {
       GITHUB: 'https://github.com/leomedinadev',
       LINKEDIN: 'https://www.linkedin.com/in/leonardo-medina-arias-305484164',
-      CV: '/HEMOGRAMA-MANCHAS.pdf', // TODO: reemplazar con el CV real (leonardo-medina-cv-2026.pdf)
+      CV: '', // Ruta del CV dentro de public/ (por ejemplo 'leonardo-medina-cv.pdf'). Vacío = se oculta el botón
     },
     ARTICLES: [
       // {
@@ -96,92 +98,31 @@ export const Constants = {
         "la bitácora de mantenimiento y la integración contable de transacciones de inventario, utilizando Yii PHP Framework ."
       }
     ],
+    // true muestra el aviso de "en construcción"; false muestra las tarjetas de PROJECTS
     BUILDING_PROJECTS: true,
     PROJECTS: [
       {
-        title: "1 SVGL - A beautiful library with SVG logos",
+        title: "Banking API - Arquitectura hexagonal",
         description:
-          "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-        link: "https://svgl.vercel.app/",
-        github: "https://github.com/pheralb/svgl",
-        image: "pokemon_bolbasor.jpg",
-        technologies: [],
-        buttons: [
-          {
-            icon: "eye",
-            text: "View Project",
-            url: ""
-          },
-          {
-            icon: "github",
-            text: "Github",
-            url: ""
-          }
-        ]
+          "API REST que simula un sistema bancario: cuentas, depósitos y retiros. Dominio aislado con arquitectura hexagonal, montos en BigDecimal, bloqueo optimista y tests con CI.",
+        github: "https://github.com/leomedinadev/ltd-banking-sb",
+        technologies: ["Java 21", "Spring Boot 4", "JPA", "MySQL", "Docker"],
       },
       {
-        title: "2 AdventJS - Retos de programación con JavaScript y TypeScript",
+        title: "Reservas de canchas de pádel",
         description:
-          "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-        link: "https://adventjs.dev",
-        github: "https://github.com/pheralb/svgl",
-        image: "charizard.jpg",
-        technologies: ["Angular", "Tailwind CSS"],
-        buttons: [
-          {
-            icon: "eye",
-            text: "View Project",
-            url: ""
-          },
-          {
-            icon: "github",
-            text: "Github",
-            url: ""
-          }
-        ]
+          "Aplicación web para reservar bloques de 1 hora entre 5 canchas de un club, dentro de una ventana de 7 días y con prevención estricta de doble reserva.",
+        github: "https://github.com/leomedinadev/ltd-reservas-padel",
+        technologies: ["Node.js", "Express", "React 18", "TypeScript", "SQLite"],
       },
       {
-        title: "3 AdventJS - Retos de programación con JavaScript y TypeScript",
+        title: "Portfolio personal",
         description:
-          "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-        link: "https://adventjs.dev",
-        github: "https://github.com/pheralb/svgl",
-        image: "picachu.jpg",
-        technologies: [],
-        buttons: [
-          {
-            icon: "eye",
-            text: "View Project",
-            url: ""
-          },
-          {
-            icon: "github",
-            text: "Github",
-            url: ""
-          }
-        ]
+          "Este sitio: componentes standalone y signals, modo oscuro y despliegue automático en GitHub Pages.",
+        link: "https://leomedinadev.github.io/ltd-portfolio-ng/",
+        github: "https://github.com/leomedinadev/ltd-portfolio-ng",
+        technologies: ["Angular 21", "Tailwind CSS 4", "Vitest"],
       },
-      {
-        title: "4 AdventJS - Retos de programación con JavaScript y TypeScript",
-        description:
-          "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-        link: "https://adventjs.dev",
-        github: "https://github.com/pheralb/svgl",
-        image: "boxeadorPokemon.jpg",
-        technologies: [],
-        buttons: [
-          {
-            icon: "eye",
-            text: "View Project",
-            url: ""
-          },
-          {
-            icon: "github",
-            text: "Github",
-            url: ""
-          }
-        ]
-      },
-    ],
+    ] as Project[],
   }
 }
