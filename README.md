@@ -8,7 +8,7 @@ A modern, responsive personal portfolio built with Angular 21 and Tailwind CSS v
 
 ## Description
 
-This is a single-page portfolio application with no routing — all sections render as a vertical stack. It features a dark-mode-first design, smooth UI interactions, and is deployed to GitHub Pages. All portfolio content (bio, experience, projects, links) is centralized in a single constants file for easy maintenance.
+This is a portfolio application: the home page renders all sections as a vertical stack, and a small blog lives under `/blog`. It features a dark-mode-first design, smooth UI interactions, and is deployed to GitHub Pages. All portfolio content (bio, experience, projects, links) is centralized in a single constants file for easy maintenance.
 
 **Tech stack:**
 - [Angular 21](https://angular.dev) — standalone components, signals
@@ -25,8 +25,8 @@ This is a single-page portfolio application with no routing — all sections ren
 
 ```bash
 # Clone the repository
-git clone https://github.com/leomedinadev/ltd-porfolio-ng.git
-cd ltd-porfolio-ng
+git clone https://github.com/leomedinadev/ltd-portfolio-ng.git
+cd ltd-portfolio-ng
 
 # Install dependencies
 npm install

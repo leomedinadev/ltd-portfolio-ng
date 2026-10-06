@@ -1,1 +1,4 @@
 @import "tailwindcss";
+
+/* dark: sigue el tema elegido en el sitio (clase .dark que pone ThemeService), no el del sistema operativo */
+@custom-variant dark (&:where(.dark, .dark *));
